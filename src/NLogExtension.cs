@@ -17,7 +17,7 @@ namespace Unity.NLog
 
         protected override void Initialize()
         {
-            Context.Policies.Set(typeof(ILogger), null, typeof(ResolveDelegateFactory), (ResolveDelegateFactory)GetResolver);
+            Context.Policies.Set(typeof(ILogger), typeof(ResolveDelegateFactory), (ResolveDelegateFactory)GetResolver);
         }
 
         public ResolveDelegate<BuilderContext> GetResolver(ref BuilderContext context)
